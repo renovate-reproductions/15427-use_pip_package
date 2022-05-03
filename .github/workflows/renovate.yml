@@ -23,6 +23,7 @@ jobs:
     steps:
     - run: renovate --reviewers-from-code-owners=true ${{ github.repository }}
       env:
-        RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        RENOVATE_HOST_RULES: "[{ \"matchHost\": \"github.com\", \"username\": \"mikhailadvani\", \"password\": \"${{ secrets.RENOVATE_TOKEN }}\"}]"
+        RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
         LOG_LEVEL: debug
       shell: bash
