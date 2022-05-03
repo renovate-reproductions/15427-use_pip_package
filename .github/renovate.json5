@@ -1,0 +1,24 @@
+{
+  "extends": [
+    ":enableRenovate",
+    "config:base"
+  ],
+  "timezone": "Europe/Amsterdam",
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": [
+    "prIgnoreNotification"
+  ],
+  "rebaseWhen": "conflicted",
+  "binarySource": "install",
+  "packageRules": [
+    // setup datasources
+    {
+      "matchDatasources": [
+        "python",
+        "docker",
+        "git-tags"
+      ],
+      "ignoreDeprecated": true
+    }
+  ]
+}
