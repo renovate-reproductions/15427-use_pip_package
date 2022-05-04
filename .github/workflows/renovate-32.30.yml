@@ -1,4 +1,4 @@
-name: Renovate-latest
+name: Renovate-32.34.0
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     container:
-      image: renovate/renovate:latest
+      image: renovate/renovate:32.34.0
     steps:
     - run: renovate --reviewers-from-code-owners=true ${{ github.repository }}
       env:
